@@ -42,7 +42,7 @@ body{
 
 a{
     text-decoration: none;
-    color: var(--darkerfont);
+    color: var(--first);
     margin: 0rem .5rem 0rem .5rem;
     transition: all .1s ease-in-out;
 }a:hover{
@@ -55,7 +55,7 @@ a{
 .vertical-line{
     height: 200px;
     width: 2px;
-    background-color: white;
+    background-color: var(--third);
 }
 .underline{
     width: 50px;
@@ -65,14 +65,18 @@ a{
 }
 
 .primary-text{
-    font-size: 32px;
-    font-weight: 500;
+    font-size: 48px;
+    font-weight: 800;
     letter-spacing: 15%;
+    text-align: left;
+    width: 70%;
 }
 .secondary-text{
     font-size: 15px;
     font-weight: 300;
     letter-spacing: 15%;
+    text-align: left;
+    width: 70%;
 }
 .tertiary-text{
     font-size: 12px;
@@ -105,7 +109,7 @@ a{
     position: fixed;
     background-color: var(--first);
     /* background-color: #A0C9DD; */
-    height: 20vh;
+    height: 15vh;
     width: 100%;
     color: var(--font);
     display: flex;
@@ -117,7 +121,7 @@ a{
 }.navbar.open{
     height: 10vh;
     width: 100%;
-    color: var(--fourth);
+    color: var(--background);
     background-color: #A0C9DD30;
 }.navbar.down{
     transform: scaleY(10vh);
@@ -153,8 +157,9 @@ a{
     width: 8vw;
     font-size: 1rem;
     text-align: center;
-}.navbar.open .links a{
     color: var(--fourth);
+}.navbar.open .links a{
+    color: var(--background);
 }.logo{
     display: flex;
     justify-content: center;
@@ -167,6 +172,9 @@ a{
 }.navbar.open .title img{
     height: 4rem;
     height: 4rem;
+}.navbar.open .get-started{
+    font-size: 1rem;
+    padding: .5rem;
 }
 .extra{
     width: 30%;
@@ -220,7 +228,7 @@ a{
 }
 .main .main-social,
 .main .main-title{
-    position: fixed;
+    position: absolute;
     height: 100vh;
     width: 5%;
     display: flex;
@@ -229,16 +237,19 @@ a{
 }.main .main-title{
     right: 0;
     bottom: 0;
+    position: fixed;
 }.main .main-social{
     left: 0;
     bottom: 0;
+    position: fixed;
 }.main .main-social .vertical-line{
     height: 75px;
+    background-color: var(--third);
 }.main .main-social .socials{
     display: flex;
     flex-direction: column;
 }.main .main-social .socials i{
-    color: white;
+    color: var(--third);
     transform: scale(2);
     margin: 1rem 0rem 1rem 0rem;
     transition: all .2s ease;
@@ -246,12 +257,12 @@ a{
     color: var(--fourth);
     cursor: pointer;
 }.main .main-content{
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20vh;
+    margin-top: 15vh;
 }.main .main-title .main-title-text{
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -269,15 +280,27 @@ a{
 
 /* Landing page */
 .landing-page{
-    background-color: white;
-    height: 70vh;
+    position: relative;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: .5rem 0rem 0rem 0rem;
-    padding: 2rem 2rem 2rem 5rem;
+    width: 100%;
+}.landing-page .landing-image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('./background.png');
+    background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    z-index: -100;
 }.landing-page .content-landing{
-    width: 40%;
+    width: 100%;
+    display: flex;
+    align-items: unset;
+    padding: 2rem 6rem 2rem 6rem;
 }.landing-page .image-landing{
     width: 60%;
 }
@@ -287,15 +310,19 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 50%;
 }.content-landing .get-started{
     color: white;
+    width: 15%;
+    margin: rem 0rem 0rem 10vw;
+    text-align: center;
 }.content-landing .get-started:hover{
     color: var(--background);
 }
 .content-landing div{
     color: var(--darkerfont);
-    text-align: center;
-    margin: 2rem;
+    text-align: left;
+    margin: .5rem;
 }
 .image-landing img{
     float: right;
@@ -317,10 +344,51 @@ a{
 .about-heading,
 .our-services-heading{
     color: var(--fourth);
-    font-size: 2rem;
+    font-size: 4rem;
+    font-weight: 600;
     width: 90%;
+}.about-heading .underline,
+.our-services-heading .underline{
+    width: 200px;
+    height: 2px;
 }
 .about-content{
+    width: 90%;
+    color: var(--background);
+    font-size: 1.25rem;
+    border-radius: 1rem;
+}.sub-heading{
+    width: 50%;
+    color: var(--background);
+}
+.about-content .horizontal-container{
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.about-content .horizontal-container div{
+    font-size: 1rem;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--background);
+    width: 42.5%;
+    height: 35vh;
+    padding: .25rem;
+    padding-bottom: 1rem;
+    border-radius: .5rem;
+    text-align: center;
+    background-color: var(--second);
+}.about-content .horizontal-container div div{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: left;
+    color: var(--yellow);
+    border: none;
+}
+/* .about-content{
     display: flex;
     flex-direction: row;
     color: white;
@@ -328,7 +396,7 @@ a{
 .about-content .what{
     padding: 2rem;
     background-color: var(--first);
-    /* background-color: white; */
+    /* background-color: white; 
     border-radius: .5rem;
     color: var(--background);
     font-size: 1.5rem;
@@ -347,102 +415,53 @@ a{
     text-align: center;
     width: 90%;
     padding: 0.25rem;
-}
+} */
 .how{
     float: right;
 }
 
 .our-services-content{
-    width: 100vw;
+    width: 90vw;
     display: flex;
     justify-content: center;
-}.our-services-content div{
-    width: 15%;
+    border-radius: 1rem;
+    background-color: white;
+}.our-services-content .service-card{
+    width: 20%;
     display: flex;
     flex-direction: column;
-}.our-services-content div .service-image{
+    height: fit-content;
+}.our-services-content .service-card .service-image{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 90%;
-}.our-services-content div .service-image i{
-    transform: scale(4);
-    color: white;
-}.our-services-content div .service-title{
+}.our-services-content .service-card .service-image i{
+    transform: scale(3);
+    color: black;
+}.our-services-content .service-card .service-title{
     font-size: 1.25rem;
-    font-weight: 200;
+    font-weight: 700;
     font-family: 'Merriweather', serif;
     width: 100%;
     text-align: center;
-    color: white;
+    color: var(--second);
 }.our-services-content .underline{
     background-color: white;
     width: 50%;
     margin: 0;
 }.our-services-content .sub-text{
     font-size: .75rem;
+    font-weight: 500;
     width: 100%;
-    color: var(--yellow);
+    color: var(--background);
     font-family: 'Lato', sans-serif;
 }
-
-/* how to use */
-.how-to-use{
-    /* background-color: var(--blue); */
-    width: 95%;
-    padding: 2rem;
-}.how-heading{
-    color: var(--fourth);
-    font-size: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.our-services-content .horizontal-container{
     justify-content: center;
-    text-align: center;
-}.how-heading .underline{
-    margin: 1rem 0rem 0rem -1rem;
-    width: 100px;
-}
-
-.how-content div{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}.how-content div:nth-child(2),
-.how-content div:nth-child(4){
-    flex-direction: row-reverse;
-}.how-content div .vertical-container{
-    background-color: var(--first);
-    border-radius: .25rem;
-    padding: 2rem;
-    margin: -1rem 2rem -1rem 2rem;
-    width: 40%;
-    height: 30vh;
-    flex-direction: column;
-}.how-content div:nth-child(1) .vertical-container{
-    margin: 1rem 2rem -1rem 2rem;
-}.how-content div .vertical-container .how-cont-heading{
-    font-size: 1.5rem;
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
-}.how-content div .vertical-container .how-cont-heading div{
-    color: var(--fourth);
-    font-size: 0.75rem;
-    font-weight: 600;
-}.how-content div .vertical-container .underline{
-    background-color: black;
-    width: 10rem;
-    margin: .5rem 0rem 0rem 0rem;
-}.how-content div .vertical-container .how-cont-subtext{
-    font-size: .75rem;
-    font-weight: 200;
-    color: var(--darkerfont);
-    margin: 1rem;
-    text-align: center;
-}
-.how-container{
-    width: 75%;
+    align-items: unset;
+    padding: 0;
+    margin: 0;
 }
 
 /* app */
@@ -452,6 +471,8 @@ a{
     align-items: center;
     flex-direction: column;
     padding: 1rem;
+    width: 100%;
+    background-color: var(--background);
 }
 .app-heading{
     color: var(--fourth);
@@ -468,9 +489,40 @@ a{
     padding: 2rem;
     font-size: 1.5rem;
 }.available-on i{
-    transform: scale(3);
+    transform: scale(2.5);
     margin: 4rem;
     color: white;
+}
+.app .app-content{
+    width: 90%;
+    padding: 2rem;
+}
+.app .app-content .horizontal-container{
+    width: 100%;
+    align-items: unset;
+}
+.app .app-content .appcon-head{
+    color: white;
+    text-align: left;
+    margin: 2rem;
+    font-size: 3rem;
+    width: 100%;
+}.app .app-content .appcon-head .appcon-text{
+    color: var(--fourth);
+    text-align: left;
+    font-size: 1rem;
+    margin: .5rem 1rem 1rem 2rem;
+}.app .app-content .appcon-head .appcon-text div{
+    font-size: 2rem;
+    font-weight: 900;
+}
+.app .app-content .appcon-visual-container{
+    
+}.app .app-content .appcon-visual-container .visual{
+    
+}.app .app-content .appcon-visual-container .visual img{
+    height: fit-content;
+    width: 100%;
 }
 
 /* the team */
@@ -492,7 +544,7 @@ a{
     align-items: center;
     justify-content: center;
 }.team-content .play-card{
-    height: 60vh;
+    height: 43vh;
     width: 25vw;
     margin: 0rem 1rem 0rem 1rem;
     background-color: var(--third);
@@ -519,29 +571,18 @@ a{
     width: 100%;
     margin-bottom: 1.5rem;
 }
-.team-content .content{
+.team-content .team-sub{
     color: white;
     text-align: center;
-    font-weight: 100;
-    padding: 2rem;
-}
-.team-content .socials{
-    position: absolute;
-    bottom: 0px;
-    margin: 0rem 0rem 1rem 1rem;
-}.team-content .socials a{
-    color: white;
-    transform: scale(1);
-    margin: 0rem .5rem 0rem .5rem;
-    transition: all .2s ease;
-}.team-content .socials a:hover{
-    cursor: pointer;
-    color: var(--blue);
+    width: 100%;
+    font-size: .75rem;
+    font-weight: 900;
+    margin-top: 1rem;
 }
 
 /* contact us */
 .contact-us{
-    height: 40vh;
+    height: 60vh;
     width: 95%;
     background-color: var(--yellow);
     display: flex;
@@ -575,9 +616,15 @@ a{
     font-weight: 100;
     font-size: 1.25rem;
     margin: 2rem;
+    text-align: center;
 }.contact-form div .underline{
     margin: .25rem 0 0 -.5rem;
-}.contact-form input{
+}.contact form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}.contact-form form input{
     appearance: none;
     outline: none;
     border: none;
@@ -587,7 +634,8 @@ a{
     font-size: 1rem;
     transition: all .1s ease;
     border-radius: .25rem;
-}.contact-form input::placeholder{
+    margin: .5rem;
+}.contact-form form input::placeholder{
     color: white;
     font-size: 1rem;
 }.contact-form input:focus{
@@ -596,12 +644,13 @@ a{
     background-color: var(--darkerfont);
 }.submit{
     background-color: var(--yellow);
-    width: 15%;
+    width: 35%;
     color: white;
     text-align: center;
-    padding: .5rem;
+    padding: .75rem;
     transition: all .2s ease;
-    font-size: rem;
+    font-size: 1rem;
+    background-color: var(--background);
 }.submit:hover{
     color: var(--background);
     background-color: white;
