@@ -448,7 +448,7 @@
         <div class="main-title">
             <div class="vertical-line"></div>
             <div class="main-title-text">
-                When I'm Gone
+                Meta Dash
             </div>
         </div>    
     </div>
