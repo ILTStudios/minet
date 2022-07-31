@@ -291,7 +291,7 @@
                         <div class="horizontal-container">
                             <div class="appcon-visual-container">
                                 <div class="visual">
-                                    <img src="/phone3.png" alt="">
+                                    <img src="/Phone3.png" alt="">
                                 </div>
                             </div>
                             <div class="appcon-head">
